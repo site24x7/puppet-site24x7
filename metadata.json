@@ -1,0 +1,25 @@
+{
+  "name": "site24x7",
+  "version": "1.0.0",
+  "source": "UNKNOWN",
+  "author": "site24x7",
+  "license": "Apache License, Version 2.0",
+  "summary": "UNKNOWN",
+  "description": "UNKNOWN",
+  "project_page": "UNKNOWN",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Modulefile": "57bb003983d771520cb457f459a011dd",
+    "README": "12a4a815345b9668cbecc510141813bf",
+    "manifests/init.pp": "83c8439a7ea15c91d6b65484d3b2cb14",
+    "manifests/linuxagent.pp": "b1137a172c2e63224aef9565a73532a6",
+    "manifests/params.pp": "cb443f5208410a75446a940ff0d50380",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "tests/init.pp": "c66130f6e36369d545400ec8ce0342fb"
+  }
+}
