@@ -1,4 +1,4 @@
-Puppet Recipe for Site24x7 services
+Bulk deployment of Site24x7 Linux agent using SaltStack
 ===========
 
 This puppet recipe installs Site24x7 Server Monitoring agent on Linux platforms. Please create a Site24x7 account to install the Linux agent using Puppet. Sign Up Now for a Free Trial!  
@@ -13,7 +13,7 @@ Redhat, Suse, Ubuntu
 Params
 ============
 
-$site24x7agent_APIkey = Your API Key is available under the Site24x7 "Add Server Monitor" page. Log In and navigate to Home > Monitors > Click on the (+) icon > Linux Server Monitoing.
+$site24x7agent_APIkey = Your API Key is available under the Site24x7 "Add Server Monitor" page. Log In and navigate to Home > Monitors > Click on the (+) icon > Linux Server Monitoring.
 
 Site24x7 API key is unique for your account. Alternate API Key can also be generated from your Site24x7 account under Admin > Developer > Device Key.
 
