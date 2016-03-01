@@ -1,8 +1,7 @@
-Puppet Recipie for Site24x7 services
+Puppet Recipe for Site24x7 services
 ===========
 
-This puppet recipie installs Site24x7 server monitoring agent on Linux platforms. This 
-requires Site24x7 account to use. Sign Up Now for a Free Trial  
+This puppet recipe installs Site24x7 Server Monitoring agent on Linux platforms. Please create a Site24x7 account to install the Linux agent using Puppet. Sign Up Now for a Free Trial  
 
 
 Supported Platforms 
@@ -14,10 +13,9 @@ Redhat, Suse, Ubuntu
 Params
 ============
 
-$site24x7agent_APIkey = Your API Key is available under the Site24x7 Add Server Monitor page. Log In and navigate to Home > New Monitor > Server Monitor. 
-Choose Server Monitor Type as Linux.
+$site24x7agent_APIkey = Your API Key is available under the Site24x7 Add Server Monitor page. Log In and navigate to Home > Monitors > Click on the (+) icon > Linux Server Monitoing.
 
-Site24x7 API key is unique for your account. Alternately API Key can also be generated from your Site24x7 account under Account > Generate API Key.
+Site24x7 API key is unique for your account. Alternate API Key can also be generated from your Site24x7 account under Account > Generate API Key.
 
 $site24x7agent_proxy = Proxy server required to connect to the Site24x7 servers. Example : user:password@proxyhost:proxyport
 
@@ -25,23 +23,17 @@ $site24x7agent_proxy = Proxy server required to connect to the Site24x7 servers.
 Installation Steps
 ============
 
-Download the Site24x7 module into your puppet modules directory: (the module directory name must be site24x7) https://github.com/site24x7/puppet-site24x7
-
-Set your apikey as described in the Params section. Edit 'site24x7/manifests/params.pp'.
-
-Set '$site24x7agent_APIkey' with your unique Site24x7 API Key.
-	
+1. Download the Site24x7 module into your puppet modules directory: (the module directory name must be site24x7) https://github.com/site24x7/puppet-site24x7
+2. Set your apikey as described in the Params section. Edit 'site24x7/manifests/params.pp'.
+3. Set '$site24x7agent_APIkey' with your unique Site24x7 API Key.
 	for eg - $site24x7agent_APIkey='06bb765a221c269ba0f9a1ebc22ad259'
-
-Set proxy attribute if necessary
-
-	for eg - $site24x7agent_proxy= "user:password@proxyhost:proxyport"
-
-View your servers from your Site24x7 account. https://www.site24x7.com/login.html
+4. Set proxy attribute if necessary
+        for eg - $site24x7agent_proxy= "user:password@proxyhost:proxyport"
+5. View your servers from your Site24x7 account. https://www.site24x7.com/login.html
 
 Related Links
 =====
-* [Site24x7 Homepage] (http://www.site24x7.com)
+* [Site24x7 Server Monitoring] (https://www.site24x7.com/server-monitoring.html)
 * [Site24x7 Signup] (https://www.site24x7.com/signup.html?pack=5&l=en)
 * [Site24x7 Help Documentation] (https://www.site24x7.com/help/admin/adding-a-monitor/linux-server-monitoring.html)
 
