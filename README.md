@@ -1,4 +1,4 @@
-Bulk deployment of Site24x7 Linux agent using SaltStack
+Bulk deployment of Site24x7 Linux agent using Puppet
 ===========
 
 This puppet recipe installs Site24x7 Server Monitoring agent on Linux platforms. Please create a Site24x7 account to install the Linux agent using Puppet. Sign Up Now for a Free Trial!  
