@@ -1,6 +1,6 @@
 class site24x7::linuxagent inherits site24x7{
 
-$customer_id=$site24x7::api_key
+$customer_id=$site24x7::device_key
 $agent_uninstall=$site24x7::agent_uninstaller
 $agent_proxy=$site24x7::site24x7agent_proxy
 $local = $site24x7::local_setup
@@ -8,7 +8,7 @@ $os_arch = $architecture
 
 notify {"OS Architecture : ${os_arch}":}
 #notify{"Agent Uninstall : ${agent_uninstall}":}
-notify{"API KEY  : ${customer_id}":}
+notify{"DEVICE KEY  : ${customer_id}":}
 notify{"Proxy Info  : ${agent_proxy}":}
 #notify{"Local Setup  : ${local}":}
 
@@ -25,7 +25,7 @@ notify {"File To Download : ${install_file}":}
 
 if $osfamily=="windows"
 {
-notify{'Failed installing agent ${api_key}':}
+notify{'Failed installing agent ${device_key}':}
 }
 else
 {
