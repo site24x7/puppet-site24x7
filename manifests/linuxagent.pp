@@ -12,7 +12,7 @@ notify{"DEVICE KEY  : ${customer_id}":}
 notify{"Proxy Info  : ${agent_proxy}":}
 #notify{"Local Setup  : ${local}":}
 
-if $os_arch=="amd64"
+if $os_arch=="amd64" or $os_arch=="x86_64"
 {
 $install_file="Site24x7_Linux_64bit.install"
 }
