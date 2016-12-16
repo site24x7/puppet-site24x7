@@ -29,7 +29,8 @@ Installation Steps
 	for eg - $site24x7agent_devicekey='06bb765a221c269ba0f9a1ebc22ad259'
 4. Set proxy attribute if necessary
         for eg - $site24x7agent_proxy= "user:password@proxyhost:proxyport"
-5. View your servers from your Site24x7 account. https://www.site24x7.com/login.html
+5. If proxy is needed for downloading Site24x7Linux agent, kindly uncomment the environment value in download_handler.pp. This assumes, the proxy you have mentioned in params.pp is the proxy needed for downloading the agent file.
+6. View your servers from your Site24x7 account. https://www.site24x7.com/login.html
 
 Related Links
 =====
