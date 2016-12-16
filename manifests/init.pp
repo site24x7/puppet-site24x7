@@ -1,11 +1,5 @@
-class site24x7($device_key=$site24x7::params::site24x7agent_devicekey,$agent_uninstaller=$site24x7::params::site24x7agent_uninstall,$agent_proxy=$site24x7::params::site24x7agent_proxy) inherits site24x7::params{
-
-notify{'site24x7 linux monitoring agent installation started':}
+class site24x7($device_key=$site24x7::params::site24x7agent_devicekey, $agent_proxy=$site24x7::params::site24x7agent_proxy) inherits site24x7::params{
 
 include site24x7::linuxagent
-include site24x7::params
-
-notify{'site24x7 linux monitoring agent installation completed':}
-
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "site24x7",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "source": "UNKNOWN",
   "author": "site24x7",
   "license": "Apache License, Version 2.0",
@@ -16,9 +16,11 @@
   "checksums": {
     "Modulefile": "57bb003983d771520cb457f459a011dd",
     "README": "12a4a815345b9668cbecc510141813bf",
-    "manifests/init.pp": "83c8439a7ea15c91d6b65484d3b2cb14",
-    "manifests/linuxagent.pp": "b1137a172c2e63224aef9565a73532a6",
+    "manifests/init.pp": "7a68f6e51ebfa88ad5b9bd8001f04f05",
+    "manifests/linuxagent.pp": "a3ffab11be2fc0b3b32e4511d808155e",
     "manifests/params.pp": "cb443f5208410a75446a940ff0d50380",
+    "manifests/download_handler.pp": "595626e4a38c3e6e30ea8f1f552fbc91",
+    "manifests/installation_handler.pp": "854c697931683210417ac49bb49ff359",
     "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
     "tests/init.pp": "c66130f6e36369d545400ec8ce0342fb"
   }
