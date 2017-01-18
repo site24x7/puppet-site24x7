@@ -5,7 +5,8 @@ $agent_proxy=$site24x7::site24x7agent_proxy
 $local = $site24x7::local_setup
 $os_arch = $architecture
 
-if inline_template("<%= `/usr/bin/test -d /opt/site24x7/monagent && echo 'Yes' || echo 'No'` %>") == "No\n"{
+if inline_template("<%= `/usr/bin/test -d /opt/site24x7/monagent && echo 'yes'` %>") != "yes"
+{
 
   if $os_arch=="amd64" or $os_arch=="x86_64"
   {
@@ -23,36 +24,30 @@ if inline_template("<%= `/usr/bin/test -d /opt/site24x7/monagent && echo 'Yes' |
 
   else{
 
-    if $customer_id!=""{
-
-    include site24x7::download_handler
-
-    if $agent_proxy!=""
+    if $customer_id!=""
     {
-
+      include site24x7::download_handler
+      if $agent_proxy!=""
+      {
         $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id}  -proxy=${agent_proxy}"
         include site24x7::installation_handler
-    }
-
-    if $agent_proxy=="" {
-
+      }
+      if $agent_proxy==""
+      {
         $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id}"
         include site24x7::installation_handler
-
+      }
+      notify {"Site24x7 Linux Agent installation in progress":}->  notify {"File To Download : ${install_file}":}->Class['site24x7::download_handler'] -> Class['site24x7::installation_handler']
     }
-
-    notify {"Site24x7 Linux Agent installation in progress":}->  notify {"File To Download : ${install_file}":}->Class['site24x7::download_handler'] -> Class['site24x7::installation_handler']
-  }
-  else
-  {
-     notify {"Site24x7 device Key not provided":}
-  }
-  
+    else
+    {
+      notify {"Site24x7 device Key not provided":}
+    }
   }
 }
-
-else{
-  notify {"Site24x7 Linux agent already installed":}
-  }
+else
+{
+  notify {"Site24x7 Linux agent already installed or other error occurred":}
+}
 
 }
