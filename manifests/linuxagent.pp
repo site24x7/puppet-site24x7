@@ -30,13 +30,13 @@ if inline_template("<%= `/usr/bin/test -d /opt/site24x7/monagent && echo 'Yes' |
     if $agent_proxy!=""
     {
 
-        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id}  -proxy=${agent_proxy}"
+        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id} -installer=puppet  -proxy=${agent_proxy}"
         include site24x7::installation_handler
     }
 
     if $agent_proxy=="" {
 
-        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id}"
+        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id} -installer=puppet"
         include site24x7::installation_handler
 
     }
