@@ -21,7 +21,7 @@ if inline_template("<%= `/usr/bin/test -d /opt/site24x7/monagent && echo 'Yes' |
   {
     notify{'Failed installing agent ${device_key}':}
   }
-h
+
   else{
 
     if $customer_id!=""{
