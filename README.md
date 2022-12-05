@@ -21,10 +21,11 @@ Installation Steps
 
 2. Edit the file, "/etc/puppetlabs/code/environments/production/modules/site24x7/manifests/params.pp" to enter your device key.
 
-3. Set '$site24x7agent_devicekey' with your unique Site24x7 device Key. 
+3. Set '$site24x7agent_devicekey' with your unique Site24x7 device Key.   
  	Example - $site24x7agent_devicekey = 'xxxxxxxxxxxxxxxxxxxxxxxx'
 
-4. Set proxy attribute if needed Example - $site24x7agent_proxy= "user:password@proxyhost:proxyport"
+4. Set proxy attribute if required.   
+ 	Example - $site24x7agent_proxy= "user:password@proxyhost:proxyport"
 
 5. If proxy is needed for downloading Site24x7Linux agent, kindly uncomment the environment value in download_handler.pp. This assumes, the proxy you have mentioned in params.pp is the proxy needed for downloading the agent file.
 
@@ -55,6 +56,8 @@ Params
 $site24x7agent_devicekey - Log in to Site24x7 page and navigate to Home > Click on the (+) icon on Monitor > click "Linux Server Monitoring". You can find the key in the command panel. Site24x7 device key is unique for your account. Alternate device Key can also be generated from your Site24x7 account under Admin > Developer > Device Key.
 
 $site24x7agent_proxy - Proxy server required to connect to the Site24x7 servers. Example : user:password@proxyhost:proxyport
+
+$automation - Enable/Disable IT automation on your Site24x7 agents. By default, it will be "true". To disable IT automation, use $automation=false 
 
 Un-Installation Steps
 ============
