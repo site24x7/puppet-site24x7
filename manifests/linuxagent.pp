@@ -2,6 +2,7 @@ class site24x7::linuxagent{
 
 $customer_id=$site24x7::device_key
 $agent_proxy=$site24x7::site24x7agent_proxy
+$automation=$site24x7::automation
 $local = $site24x7::local_setup
 $os_arch = $architecture
 
@@ -20,7 +21,7 @@ if inline_template("<%= `/usr/bin/test -d /opt/site24x7/monagent && echo 'Yes' |
   {
     notify{'Failed installing agent ${device_key}':}
   }
-
+h
   else{
 
     if $customer_id!=""{
@@ -30,13 +31,13 @@ if inline_template("<%= `/usr/bin/test -d /opt/site24x7/monagent && echo 'Yes' |
     if $agent_proxy!=""
     {
 
-        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id} -installer=puppet  -proxy=${agent_proxy}"
+        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id} -installer=puppet -automation=$automation -proxy=${agent_proxy}"
         include site24x7::installation_handler
     }
 
     if $agent_proxy=="" {
 
-        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id} -installer=puppet"
+        $command = "/tmp/site24x7agent/./Linux_Agent.install -i -key=${customer_id} -automation=$automation -installer=puppet"
         include site24x7::installation_handler
 
     }
